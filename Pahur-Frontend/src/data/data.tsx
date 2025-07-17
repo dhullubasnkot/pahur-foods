@@ -1,0 +1,173 @@
+const ProductsData = [
+  {
+    id: 1,
+    name: "Mango Pickle",
+    Price: 129,
+    category: "Pickles",
+    description: "Best pickle in the town",
+    Ingredients: "Mango, salt, vinegar",
+    rating: 4.5,
+    subcategory: "Mango Pickle",
+    image: {
+      main: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
+      ],
+    },
+  },
+  {
+    id: 2,
+    name: "Lemon Pickle",
+    Price: 99,
+    category: "Pickles",
+    description: "Tangy and spicy lemon pickle",
+    rating: 4.5,
+    subcategory: "Lemon Pickle",
+    Ingredients: "Lemon, salt, chili powder, oil",
+    image: {
+      main: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80",
+      ],
+    },
+  },
+  {
+    id: 3,
+    name: "Mixed Vegetable Pickle",
+    Price: 149,
+    category: "Pickles",
+    rating: 4.5,
+    subcategory: "Mixed Vegetable Pickel",
+    description: "A mix of fresh vegetables in spices",
+    Ingredients: "Carrot, cauliflower, beans, spices",
+    image: {
+      main: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+      ],
+    },
+  },
+  {
+    id: 4,
+    name: "Chili Pickle",
+    Price: 119,
+    category: "Pickles",
+    rating: 4.5,
+    subcategory: "Chilli Pickle",
+    description: "Spicy green chili pickle",
+    Ingredients: "Green chili, mustard oil, spices",
+    image: {
+      main: "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+      ],
+    },
+  },
+  {
+    id: 5,
+    name: "Garlic Pickle",
+    Price: 109,
+    category: "Pickles",
+    rating: 4.5,
+    subcategory: "Garlic Pickle",
+    description: "Flavorful garlic pickle",
+    Ingredients: "Garlic, oil, spices",
+    image: {
+      main: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
+      ],
+    },
+  },
+  {
+    id: 6,
+    name: "Amla Pickle",
+    Price: 139,
+    category: "Pickles",
+    rating: 4.5,
+    subcategory: "Amla Pickle",
+    description: "Healthy amla (gooseberry) pickle",
+    Ingredients: "Amla, salt, spices, oil",
+    image: {
+      main: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+      ],
+    },
+  },
+  {
+    id: 7,
+    name: "Onion Pickle",
+    Price: 89,
+    category: "Pickles",
+    rating: 4.5,
+    subcategory: "Onion Pickle",
+    description: "Crispy onion pickle",
+    Ingredients: "Onion, vinegar, spices",
+    image: {
+      main: "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+      ],
+    },
+  },
+  {
+    id: 8,
+    name: "Carrot Pickle",
+    Price: 99,
+    category: "Pickles",
+    rating: 4.5,
+    subcategory: "Carrot Pickle",
+    description: "Sweet and spicy carrot pickle",
+    Ingredients: "Carrot, sugar, chili powder, salt",
+    image: {
+      main: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
+      ],
+    },
+  },
+  {
+    id: 9,
+    name: "Tomato Pickle",
+    Price: 119,
+    category: "Pickles",
+    rating: 4.5,
+    subcategory: "Tomato Pickle",
+    description: "Tangy tomato pickle",
+    Ingredients: "Tomato, mustard seeds, oil, spices",
+    image: {
+      main: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80",
+      ],
+    },
+  },
+  {
+    id: 10,
+    name: "Ginger Pickle",
+    Price: 129,
+    category: "Pickles",
+    rating: 4.5,
+    subcategory: "Ginger Pickle",
+    description: "Zesty ginger pickle",
+    Ingredients: "Ginger, lemon juice, salt, spices",
+    image: {
+      main: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+      ],
+    },
+  },
+];
+export default ProductsData;
