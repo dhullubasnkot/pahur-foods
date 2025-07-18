@@ -1,11 +1,13 @@
+import GheePage from "../pages/Ghee";
 import HeroSection from "../pages/herosection";
-import Pickel from "../pages/Pickles";
+import PickelPage from "../pages/Pickles";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <Pickel />
+      <PickelPage />
+      <GheePage />
     </>
   );
 }

@@ -1,18 +1,39 @@
 import { useParams, Link } from "react-router-dom";
 import ProductsData from "../data/data";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+type ProductType = {
+  id: number;
+  name: string;
+  description: string;
+  Ingredients: string;
+  price: number;
+  category: string;
+  image: {
+    main: string;
+    images: string[];
+  };
+};
 
 export default function ProductsDetails() {
   const { id } = useParams();
-  const product = ProductsData.find((item) => item.id === parseInt(id || "0"));
-  const [activeImg, setActiveImg] = useState(product?.image.main || "");
+  const [product, setProduct] = useState<ProductType | null>(null);
+  const [activeImg, setActiveImg] = useState("");
+
+  useEffect(() => {
+    const foundProduct = ProductsData.find(
+      (item) => item.id === parseInt(id || "0")
+    );
+    setProduct(foundProduct ?? null);
+    setActiveImg(foundProduct?.image.main || "");
+  }, [id]);
 
   if (!product) {
     return <p className="text-center mt-20 text-red-500">Pickle not found.</p>;
   }
 
   return (
-    <div className="min-h-screen bg-orange-50 px-4 py-10 font-sans">
+    <div className="min-h-screen bg-white px-4 py-10 font-sans">
       <div className="max-w-7xl mx-auto bg-white rounded-xl shadow-lg p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-10">
         <div>
           <div className="border rounded-lg overflow-hidden">
@@ -48,10 +69,10 @@ export default function ProductsDetails() {
 
             <div className="mt-4 mb-2 flex items-center gap-3">
               <span className="text-3xl font-bold text-orange-600">
-                Rs. {product.Price}
+                Rs. {product.price}
               </span>
               <span className="text-gray-500 line-through">
-                Rs. {product.Price + 20}
+                Rs. {product.price + 20}
               </span>
               <span className="bg-green-100 text-green-700 px-2 py-1 text-sm rounded-full">
                 Save Rs. 20
@@ -92,7 +113,8 @@ export default function ProductsDetails() {
           </div>
         </div>
       </div>
-      <div>
+
+      <div className="mt-10">
         <p className="text-lg font-semibold text-gray-800">Similar Items</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
           {ProductsData.filter(
@@ -101,7 +123,7 @@ export default function ProductsDetails() {
           )
             .slice(0, 4)
             .map((item) => (
-              <Link to={`/pickel/${product.id}`} key={product.id}>
+              <Link to={`/products/${item.id}`} key={item.id}>
                 <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition p-4">
                   <img
                     src={item.image.main}
@@ -113,7 +135,7 @@ export default function ProductsDetails() {
                   </h3>
                   <p className="text-sm text-gray-500">{item.description}</p>
                   <span className="text-orange-600 font-bold mt-2 block">
-                    Rs. {item.Price}
+                    Rs. {item.price}
                   </span>
                 </div>
               </Link>

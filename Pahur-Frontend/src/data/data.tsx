@@ -2,24 +2,24 @@ const ProductsData = [
   {
     id: 1,
     name: "Mango Pickle",
-    Price: 129,
+    price: 129,
     category: "Pickles",
     description: "Best pickle in the town",
     Ingredients: "Mango, salt, vinegar",
     rating: 4.5,
     subcategory: "Mango Pickle",
     image: {
-      main: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+      main: "/images/Pickel/Mango/Mango1.webp",
       images: [
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
-        "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
+        "/images/Pickel/Mango/Mango2.webp",
+        "/images/Pickel/Mango/Mango3.webp",
       ],
     },
   },
   {
     id: 2,
     name: "Lemon Pickle",
-    Price: 99,
+    price: 99,
     category: "Pickles",
     description: "Tangy and spicy lemon pickle",
     rating: 4.5,
@@ -36,7 +36,7 @@ const ProductsData = [
   {
     id: 3,
     name: "Mixed Vegetable Pickle",
-    Price: 149,
+    price: 149,
     category: "Pickles",
     rating: 4.5,
     subcategory: "Mixed Vegetable Pickel",
@@ -53,7 +53,7 @@ const ProductsData = [
   {
     id: 4,
     name: "Chili Pickle",
-    Price: 119,
+    price: 119,
     category: "Pickles",
     rating: 4.5,
     subcategory: "Chilli Pickle",
@@ -70,7 +70,7 @@ const ProductsData = [
   {
     id: 5,
     name: "Garlic Pickle",
-    Price: 109,
+    price: 109,
     category: "Pickles",
     rating: 4.5,
     subcategory: "Garlic Pickle",
@@ -87,7 +87,7 @@ const ProductsData = [
   {
     id: 6,
     name: "Amla Pickle",
-    Price: 139,
+    price: 139,
     category: "Pickles",
     rating: 4.5,
     subcategory: "Amla Pickle",
@@ -104,7 +104,7 @@ const ProductsData = [
   {
     id: 7,
     name: "Onion Pickle",
-    Price: 89,
+    price: 89,
     category: "Pickles",
     rating: 4.5,
     subcategory: "Onion Pickle",
@@ -121,7 +121,7 @@ const ProductsData = [
   {
     id: 8,
     name: "Carrot Pickle",
-    Price: 99,
+    price: 99,
     category: "Pickles",
     rating: 4.5,
     subcategory: "Carrot Pickle",
@@ -138,7 +138,7 @@ const ProductsData = [
   {
     id: 9,
     name: "Tomato Pickle",
-    Price: 119,
+    price: 119,
     category: "Pickles",
     rating: 4.5,
     subcategory: "Tomato Pickle",
@@ -155,7 +155,7 @@ const ProductsData = [
   {
     id: 10,
     name: "Ginger Pickle",
-    Price: 129,
+    price: 129,
     category: "Pickles",
     rating: 4.5,
     subcategory: "Ginger Pickle",
@@ -166,6 +166,71 @@ const ProductsData = [
       images: [
         "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
         "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+      ],
+    },
+  },
+  {
+    id: 11,
+    name: "Cow Ghee",
+    price: 499,
+    category: "Ghee",
+    rating: 4.8,
+    subcategory: "Cow Ghee",
+    description: "Pure cow ghee made from fresh cream",
+    Ingredients: "Cow milk cream",
+    image: {
+      main: "/images/Ghee/Cow/cow1.jpg",
+      images: ["/images/Ghee/Cow/cow2.jpg", "/images/Ghee/Cow/cow3.webp"],
+    },
+  },
+  {
+    id: 12,
+    name: "Buffalo Ghee",
+    price: 549,
+    category: "Ghee",
+    rating: 4.7,
+    subcategory: "Buffalo Ghee",
+    description: "Rich and creamy buffalo ghee",
+    Ingredients: "Buffalo milk cream",
+    image: {
+      main: "/images/Ghee/Buffalo/Buffalo1.webp",
+      images: [
+        "/images/Ghee/Buffalo/Buffalo2.webp",
+        "/images/Ghee/Buffalo/Buffalo3.png",
+      ],
+    },
+  },
+  {
+    id: 13,
+    name: "Natural Ghee",
+    price: 599,
+    category: "Ghee",
+    rating: 4.9,
+    subcategory: "Natural Ghee",
+    description: "Traditional natural ghee with authentic flavor",
+    Ingredients: "Milk cream",
+    image: {
+      main: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+      ],
+    },
+  },
+  {
+    id: 14,
+    name: "Mix Ghee",
+    price: 399,
+    category: "Ghee",
+    rating: 4.6,
+    subcategory: "Mix Ghee",
+    description: "Blend of cow and buffalo ghee",
+    Ingredients: "Cow milk cream, buffalo milk cream",
+    image: {
+      main: "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80",
+      images: [
+        "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
       ],
     },
   },
