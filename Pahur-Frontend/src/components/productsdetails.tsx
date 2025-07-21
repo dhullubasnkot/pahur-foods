@@ -98,9 +98,9 @@ export default function ProductsDetails() {
             <div>
               <strong>Return Policy:</strong> Within 3 days if sealed
             </div>
-            <div>
+            {/* <div>
               <strong>Seller:</strong> Grandma’s Homemade Pickles
-            </div>
+            </div> */}
             <div>
               <strong>Customer Support:</strong>{" "}
               <a
