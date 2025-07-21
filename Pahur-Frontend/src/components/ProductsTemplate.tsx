@@ -67,7 +67,7 @@ export default function ProductList({ category }: ProductListProps) {
 
                   <div className="mt-4 flex justify-between items-center">
                     <span className="text-lg font-bold text-orange-600">
-                      ${product.price}
+                      Rs.{product.price}
                     </span>
                     <button className="text-sm text-orange-700 hover:underline">
                       View
