@@ -11,11 +11,12 @@ export default function Navbar() {
     <nav className="bg-white  sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link
-          to="/"
-          className="text-3xl font-extrabold text-orange-500 tracking-wide hover:scale-105 transition-transform duration-200 ease-in-out"
-        >
-          Pahur
+        <Link to="/" className="inline-block">
+          <img
+            src="/pahurlogo.png"
+            alt="Pahur Logo"
+            className="w-36 h-[70px] object-contain"
+          />
         </Link>
 
         {/* Desktop Menu */}
