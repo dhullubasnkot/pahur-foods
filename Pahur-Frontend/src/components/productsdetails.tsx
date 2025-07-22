@@ -8,10 +8,13 @@ type ProductType = {
   description: string;
   Ingredients: string;
   price: number;
+  weight: string;
   category: string;
+  mainCategory: string;
+  type: string;
   image: {
     main: string;
-    images: string[];
+    images?: string[];
   };
 };
 
@@ -29,12 +32,13 @@ export default function ProductsDetails() {
   }, [id]);
 
   if (!product) {
-    return <p className="text-center mt-20 text-red-500">Pickle not found.</p>;
+    return <p className="text-center mt-20 text-red-500">Product not found.</p>;
   }
 
   return (
     <div className="min-h-screen bg-white px-4 py-10 font-sans">
       <div className="max-w-7xl mx-auto bg-white rounded-xl shadow-lg p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-10">
+        {/* Image section */}
         <div>
           <div className="border rounded-lg overflow-hidden">
             <img
@@ -44,7 +48,7 @@ export default function ProductsDetails() {
             />
           </div>
           <div className="flex gap-4 mt-4">
-            {product.image.images.map((img, i) => (
+            {product.image.images?.map((img, i) => (
               <img
                 key={i}
                 src={img}
@@ -57,15 +61,31 @@ export default function ProductsDetails() {
           </div>
         </div>
 
+        {/* Details section */}
         <div className="flex flex-col justify-between">
           <div>
             <h1 className="text-3xl font-bold text-orange-700 mb-2">
               {product.name}
             </h1>
-            <p className="text-gray-600 mb-2">{product.description}</p>
-            <p className="mb-2 text-sm text-gray-500">
-              <strong>Ingredients:</strong> {product.Ingredients}
-            </p>
+            <p className="text-gray-600 mb-3">{product.description}</p>
+
+            <ul className="text-sm text-gray-600 space-y-1 mb-3">
+              <li>
+                <strong>Weight:</strong> {product.weight}
+              </li>
+              <li>
+                <strong>Type:</strong> {product.type}
+              </li>
+              <li>
+                <strong>Main Category:</strong> {product.mainCategory}
+              </li>
+              <li>
+                <strong>Category:</strong> {product.category}
+              </li>
+              <li>
+                <strong>Ingredients:</strong> {product.Ingredients}
+              </li>
+            </ul>
 
             <div className="mt-4 mb-2 flex items-center gap-3">
               <span className="text-3xl font-bold text-orange-600">
@@ -88,6 +108,8 @@ export default function ProductsDetails() {
               </button>
             </div>
           </div>
+
+          {/* Info box */}
           <div className="mt-8 bg-orange-50 border border-orange-200 rounded-lg p-5 space-y-3 text-sm text-gray-700">
             <div>
               <strong>Delivery:</strong> Rs. 100 inside town (24–48 hours)
@@ -98,9 +120,6 @@ export default function ProductsDetails() {
             <div>
               <strong>Return Policy:</strong> Within 3 days if sealed
             </div>
-            {/* <div>
-              <strong>Seller:</strong> Grandma’s Homemade Pickles
-            </div> */}
             <div>
               <strong>Customer Support:</strong>{" "}
               <a
@@ -114,6 +133,7 @@ export default function ProductsDetails() {
         </div>
       </div>
 
+      {/* Similar Items */}
       <div className="mt-10">
         <p className="text-lg font-semibold text-gray-800">Similar Items</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">

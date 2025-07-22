@@ -1,4 +1,4 @@
-const ProductsData = [
+export const ProductsData = [
   // ------------------ CHICKEN ACHAR ------------------
   {
     id: 1,
@@ -12,13 +12,6 @@ const ProductsData = [
     description: "Classic Nepali chicken achar with a fiery kick.",
     Ingredients: "Chicken, chili, mustard oil, garlic, spices",
     rating: 4.6,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
   {
     id: 2,
@@ -32,13 +25,6 @@ const ProductsData = [
     description: "Traditional chicken achar with balanced spices.",
     Ingredients: "Chicken, mustard oil, garlic, fenugreek, chili",
     rating: 4.5,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
   {
     id: 3,
@@ -52,13 +38,6 @@ const ProductsData = [
     description: "Spicy small pack of our fiery chicken achar.",
     Ingredients: "Chicken, red chili, garlic, oil, spices",
     rating: 4.5,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
   {
     id: 4,
@@ -72,13 +51,6 @@ const ProductsData = [
     description: "Regular chicken achar in a convenient small pack.",
     Ingredients: "Chicken, mustard oil, garlic, spices",
     rating: 4.4,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
 
   // ------------------ FISH ACHAR / SEAFOOD ------------------
@@ -94,13 +66,6 @@ const ProductsData = [
     description: "Spicy fish achar made with fresh brunie fish.",
     Ingredients: "Brunie fish, mustard oil, chili, turmeric, spices",
     rating: 4.5,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
   {
     id: 6,
@@ -114,13 +79,6 @@ const ProductsData = [
     description: "Tangy fish achar with authentic Nepali flavors.",
     Ingredients: "Brunie fish, oil, garlic, fenugreek, spices",
     rating: 4.4,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
   {
     id: 7,
@@ -134,13 +92,6 @@ const ProductsData = [
     description: "Aromatic fish paste with timur and garlic.",
     Ingredients: "Fish, timur, garlic, oil, spices",
     rating: 4.7,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
 
   // ------------------ VEG ACHAR – SPICY ------------------
@@ -156,13 +107,6 @@ const ProductsData = [
     description: "Zesty garlic achar bursting with flavor.",
     Ingredients: "Garlic, mustard oil, chili, turmeric, salt",
     rating: 4.5,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
   {
     id: 9,
@@ -176,13 +120,6 @@ const ProductsData = [
     description: "Earthy methi (fenugreek) achar with spices.",
     Ingredients: "Fenugreek, oil, chili, turmeric, salt",
     rating: 4.4,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
   {
     id: 10,
@@ -196,13 +133,6 @@ const ProductsData = [
     description: "Hot red chilli paste made from native chillies.",
     Ingredients: "Dalle khursani, mustard oil, garlic, salt",
     rating: 4.6,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
   {
     id: 11,
@@ -216,13 +146,6 @@ const ProductsData = [
     description: "Traditional Nepali spice herb achar.",
     Ingredients: "Spice herb, mustard oil, garlic, chili",
     rating: 4.5,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
   {
     id: 12,
@@ -236,13 +159,6 @@ const ProductsData = [
     description: "Aromatic paste made with timur (Szechuan pepper).",
     Ingredients: "Timur, garlic, oil, salt",
     rating: 4.4,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
 
   // ------------------ VEG ACHAR – MILD / TANGY ------------------
@@ -258,13 +174,6 @@ const ProductsData = [
     description: "Assorted vegetable achar with balanced tanginess.",
     Ingredients: "Carrot, cauliflower, radish, spices, oil",
     rating: 4.5,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
   {
     id: 14,
@@ -278,13 +187,6 @@ const ProductsData = [
     description: "Refreshing lemon achar with mild spices.",
     Ingredients: "Lemon, salt, chili, oil",
     rating: 4.5,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
   {
     id: 15,
@@ -298,13 +200,6 @@ const ProductsData = [
     description: "Combination of akhabare and lemon achar in one jar.",
     Ingredients: "Akhabare herb, lemon, oil, spices",
     rating: 4.5,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
 
   // ------------------ GHEE ------------------
@@ -320,13 +215,6 @@ const ProductsData = [
     description: "Pure cow ghee from organic milk.",
     Ingredients: "Cow milk cream",
     rating: 4.9,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
   {
     id: 17,
@@ -340,13 +228,6 @@ const ProductsData = [
     description: "Rich buffalo milk ghee with creamy texture.",
     Ingredients: "Buffalo milk cream",
     rating: 4.8,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
   {
     id: 18,
@@ -360,13 +241,6 @@ const ProductsData = [
     description: "Desi ghee made in traditional method.",
     Ingredients: "Cultured cream",
     rating: 4.9,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
   {
     id: 19,
@@ -380,13 +254,5 @@ const ProductsData = [
     description: "Blend of cow and buffalo ghee for balanced flavor.",
     Ingredients: "Cow cream, buffalo cream",
     rating: 4.7,
-    image: {
-      main: "/images/pickles/chicken-piro.jpg",
-      images: [
-        "/images/pickles/chicken-piro-1.jpg",
-        "/images/pickles/chicken-piro-2.jpg",
-      ],
-    },
   },
 ];
-export default ProductsData;

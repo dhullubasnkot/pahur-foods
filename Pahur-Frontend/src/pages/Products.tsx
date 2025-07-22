@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
-import { ProductCard } from "../components/ProductsCard";
 import { CategoryFilter } from "../components/CategoryFilter";
 import { SubcategoryFilter } from "../components/SubCategoryFilter";
+import ProductList from "../components/ProductsTemplate";
 import ProductsData from "../data/data";
 
 const AllProducts = () => {
@@ -10,11 +10,13 @@ const AllProducts = () => {
     null
   );
 
+  // Extract unique categories from dataset
   const categories = useMemo(
     () => Array.from(new Set(ProductsData.map((p) => p.category))),
     []
   );
 
+  // Extract subcategories when category changes
   const subcategories = useMemo(() => {
     if (!selectedCategory) return [];
     return Array.from(
@@ -26,6 +28,7 @@ const AllProducts = () => {
     );
   }, [selectedCategory]);
 
+  // Filter products by category and subcategory
   const filteredProducts = useMemo(() => {
     return ProductsData.filter((product) => {
       if (selectedCategory && product.category !== selectedCategory)
@@ -56,7 +59,7 @@ const AllProducts = () => {
         </div>
       </div>
 
-      {/* Filters & Products */}
+      {/* Filters */}
       <div className="container mx-auto px-4 py-8">
         <CategoryFilter
           categories={categories}
@@ -73,44 +76,12 @@ const AllProducts = () => {
           />
         )}
 
-        <div className="flex flex-wrap items-center gap-4 mb-6">
-          <span className="text-sm text-gray-500">
-            Showing {filteredProducts.length} product
-            {filteredProducts.length !== 1 && "s"}
-          </span>
-          {selectedCategory && (
-            <span className="bg-orange-200 text-orange-800 px-3 py-1 rounded-full text-xs">
-              Category: {selectedCategory}
-            </span>
-          )}
-          {selectedSubcategory && (
-            <span className="bg-green-200 text-green-800 px-3 py-1 rounded-full text-xs">
-              Subcategory: {selectedSubcategory}
-            </span>
-          )}
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filteredProducts.map((product, index) => (
-            <div
-              key={product.id}
-              className="animate-fade-in-up"
-              style={{ animationDelay: `${index * 75}ms` }}
-            >
-              <ProductCard product={product} />
-            </div>
-          ))}
-        </div>
-
-        {filteredProducts.length === 0 && (
-          <div className="text-center py-16">
-            <div className="text-6xl mb-4">🫙</div>
-            <h2 className="text-xl font-semibold mb-2">No products found</h2>
-            <p className="text-gray-500">
-              Try adjusting your filters to find what you're looking for.
-            </p>
-          </div>
-        )}
+        {/* Product List */}
+        <ProductList
+          products={filteredProducts}
+          category={selectedCategory ?? undefined}
+          showAllByDefault={false}
+        />
       </div>
     </div>
   );
