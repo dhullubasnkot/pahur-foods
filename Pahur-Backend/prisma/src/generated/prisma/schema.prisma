@@ -15,15 +15,18 @@ datasource db {
 }
 
 model Product {
-  id          Int      @id @default(autoincrement())
-  name        String
-  Price       Int
-  category    String
-  subcategory String?
-  rating      Float?   @default(0)
-  description String
-  Ingredients String?
-  image       Json
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id           Int      @id @default(autoincrement())
+  name         String
+  price        Int
+  category     String
+  maincategory String
+  type         String
+  weight       Int
+  subcategory  String?
+  rating       Float?   @default(0)
+  description  String
+  Ingredients  String?
+  image        Json
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }

@@ -1,27 +1,14 @@
 import { useParams, Link } from "react-router-dom";
 import ProductsData from "../data/data";
 import { useState, useEffect } from "react";
-
-type ProductType = {
-  id: number;
-  name: string;
-  description: string;
-  Ingredients: string;
-  price: number;
-  weight: string;
-  category: string;
-  mainCategory: string;
-  type: string;
-  image: {
-    main: string;
-    images?: string[];
-  };
-};
+import type { ProductType } from "../context/cartcontext";
+import { useCart } from "../context/cartcontext";
 
 export default function ProductsDetails() {
   const { id } = useParams();
   const [product, setProduct] = useState<ProductType | null>(null);
   const [activeImg, setActiveImg] = useState("");
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const foundProduct = ProductsData.find(
@@ -34,6 +21,10 @@ export default function ProductsDetails() {
   if (!product) {
     return <p className="text-center mt-20 text-red-500">Product not found.</p>;
   }
+
+  const handleAddToCart = () => {
+    addToCart(product);
+  };
 
   return (
     <div className="min-h-screen bg-white px-4 py-10 font-sans">
@@ -100,12 +91,18 @@ export default function ProductsDetails() {
             </div>
 
             <div className="flex gap-4 mt-6">
-              <button className="bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition">
+              <button
+                onClick={handleAddToCart}
+                className="bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition"
+              >
                 🛒 Add to Cart
               </button>
-              <button className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+              <Link
+                to="/cart"
+                className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition text-center"
+              >
                 🧾 Buy Now
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -134,7 +131,7 @@ export default function ProductsDetails() {
       </div>
 
       {/* Similar Items */}
-      <div className="mt-10">
+      <div className="max-w-7xl mx-auto mt-10">
         <p className="text-lg font-semibold text-gray-800">Similar Items</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
           {ProductsData.filter(
@@ -144,7 +141,7 @@ export default function ProductsDetails() {
             .slice(0, 4)
             .map((item) => (
               <Link to={`/products/${item.id}`} key={item.id}>
-                <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition p-4">
+                <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition p-4 cursor-pointer">
                   <img
                     src={item.image.main}
                     alt={item.name}

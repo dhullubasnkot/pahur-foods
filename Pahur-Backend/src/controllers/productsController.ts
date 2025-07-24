@@ -1,12 +1,22 @@
 import { Request, Response } from "express";
-import { PrismaClient } from "../generated/prisma";
+import { PrismaClient } from "@prisma/client";
+import { parse } from "path";
 
 const prisma = new PrismaClient();
 
 export const createProduct = async (req: Request, res: Response) => {
   try {
-    const { name, Price, category, subcategory, description, Ingredients } =
-      req.body;
+    const {
+      name,
+      price,
+      maincategory,
+      type,
+      weight,
+      category,
+      subcategory,
+      description,
+      Ingredients,
+    } = req.body;
 
     // multer sets req.files as an object when using upload.fields()
     const files = req.files as
@@ -38,8 +48,11 @@ export const createProduct = async (req: Request, res: Response) => {
     const product = await prisma.product.create({
       data: {
         name,
-        Price: parseInt(Price),
+        type,
+        maincategory,
+        Price: parseInt(price),
         category,
+        Weight: parseInt(weight),
         subcategory,
         description,
         Ingredients,
@@ -57,47 +70,53 @@ export const createProduct = async (req: Request, res: Response) => {
   }
 };
 
-export const getProducts = async (_req: Request, res: Response) => {
-  try {
-    const products = await prisma.product.findMany();
-    res.json(products);
-  } catch (err) {
-    res.status(500).json({ message: "Error fetching products", error: err });
-  }
-};
+// export const createProduct = async (req:Request, res: Response)=>{
+//   try{
+//     const
+//   }
+// }
 
-export const getProductById = async (req: Request, res: Response) => {
-  const id = parseInt(req.params.id);
-  try {
-    const product = await prisma.product.findUnique({ where: { id } });
-    if (!product) return res.status(404).json({ message: "Product not found" });
-    res.json(product);
-  } catch (err) {
-    res.status(500).json({ message: "Error fetching product", error: err });
-  }
-};
+// export const getProducts = async (_req: Request, res: Response) => {
+//   try {
+//     const products = await prisma.product.findMany();
+//     res.json(products);
+//   } catch (err) {
+//     res.status(500).json({ message: "Error fetching products", error: err });
+//   }
+// };
 
-export const updateProduct = async (req: Request, res: Response) => {
-  const id = parseInt(req.params.id);
-  const { name, Price, description, Ingredients, category, subcategory } =
-    req.body;
-  try {
-    const product = await prisma.product.update({
-      where: { id },
-      data: {
-        name,
-        Price: parseInt(Price),
-        description,
-        Ingredients,
-        category,
-        subcategory,
-      },
-    });
-    res.json(product);
-  } catch (err) {
-    res.status(500).json({ message: "Update failed", error: err });
-  }
-};
+// export const getProductById = async (req: Request, res: Response) => {
+//   const id = parseInt(req.params.id);
+//   try {
+//     const product = await prisma.product.findUnique({ where: { id } });
+//     if (!product) return res.status(404).json({ message: "Product not found" });
+//     res.json(product);
+//   } catch (err) {
+//     res.status(500).json({ message: "Error fetching product", error: err });
+//   }
+// };
+
+// export const updateProduct = async (req: Request, res: Response) => {
+//   const id = parseInt(req.params.id);
+//   const { name, Price, description, Ingredients, category, subcategory } =
+//     req.body;
+//   try {
+//     const product = await prisma.product.update({
+//       where: { id },
+//       data: {
+//         name,
+//         Price: parseInt(Price),
+//         description,
+//         Ingredients,
+//         category,
+//         subcategory,
+//       },
+//     });
+//     res.json(product);
+//   } catch (err) {
+//     res.status(500).json({ message: "Update failed", error: err });
+//   }
+// };
 
 export const deleteProduct = async (req: Request, res: Response) => {
   const id = parseInt(req.params.id);

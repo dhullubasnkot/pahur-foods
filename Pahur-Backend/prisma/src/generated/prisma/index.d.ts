@@ -875,21 +875,26 @@ export namespace Prisma {
 
   export type ProductAvgAggregateOutputType = {
     id: number | null
-    Price: number | null
+    price: number | null
+    weight: number | null
     rating: number | null
   }
 
   export type ProductSumAggregateOutputType = {
     id: number | null
-    Price: number | null
+    price: number | null
+    weight: number | null
     rating: number | null
   }
 
   export type ProductMinAggregateOutputType = {
     id: number | null
     name: string | null
-    Price: number | null
+    price: number | null
     category: string | null
+    maincategory: string | null
+    type: string | null
+    weight: number | null
     subcategory: string | null
     rating: number | null
     description: string | null
@@ -901,8 +906,11 @@ export namespace Prisma {
   export type ProductMaxAggregateOutputType = {
     id: number | null
     name: string | null
-    Price: number | null
+    price: number | null
     category: string | null
+    maincategory: string | null
+    type: string | null
+    weight: number | null
     subcategory: string | null
     rating: number | null
     description: string | null
@@ -914,8 +922,11 @@ export namespace Prisma {
   export type ProductCountAggregateOutputType = {
     id: number
     name: number
-    Price: number
+    price: number
     category: number
+    maincategory: number
+    type: number
+    weight: number
     subcategory: number
     rating: number
     description: number
@@ -929,21 +940,26 @@ export namespace Prisma {
 
   export type ProductAvgAggregateInputType = {
     id?: true
-    Price?: true
+    price?: true
+    weight?: true
     rating?: true
   }
 
   export type ProductSumAggregateInputType = {
     id?: true
-    Price?: true
+    price?: true
+    weight?: true
     rating?: true
   }
 
   export type ProductMinAggregateInputType = {
     id?: true
     name?: true
-    Price?: true
+    price?: true
     category?: true
+    maincategory?: true
+    type?: true
+    weight?: true
     subcategory?: true
     rating?: true
     description?: true
@@ -955,8 +971,11 @@ export namespace Prisma {
   export type ProductMaxAggregateInputType = {
     id?: true
     name?: true
-    Price?: true
+    price?: true
     category?: true
+    maincategory?: true
+    type?: true
+    weight?: true
     subcategory?: true
     rating?: true
     description?: true
@@ -968,8 +987,11 @@ export namespace Prisma {
   export type ProductCountAggregateInputType = {
     id?: true
     name?: true
-    Price?: true
+    price?: true
     category?: true
+    maincategory?: true
+    type?: true
+    weight?: true
     subcategory?: true
     rating?: true
     description?: true
@@ -1069,8 +1091,11 @@ export namespace Prisma {
   export type ProductGroupByOutputType = {
     id: number
     name: string
-    Price: number
+    price: number
     category: string
+    maincategory: string
+    type: string
+    weight: number
     subcategory: string | null
     rating: number | null
     description: string
@@ -1102,8 +1127,11 @@ export namespace Prisma {
   export type ProductSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    Price?: boolean
+    price?: boolean
     category?: boolean
+    maincategory?: boolean
+    type?: boolean
+    weight?: boolean
     subcategory?: boolean
     rating?: boolean
     description?: boolean
@@ -1118,8 +1146,11 @@ export namespace Prisma {
   export type ProductSelectScalar = {
     id?: boolean
     name?: boolean
-    Price?: boolean
+    price?: boolean
     category?: boolean
+    maincategory?: boolean
+    type?: boolean
+    weight?: boolean
     subcategory?: boolean
     rating?: boolean
     description?: boolean
@@ -1129,7 +1160,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "Price" | "category" | "subcategory" | "rating" | "description" | "Ingredients" | "image" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
+  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "price" | "category" | "maincategory" | "type" | "weight" | "subcategory" | "rating" | "description" | "Ingredients" | "image" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
 
   export type $ProductPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Product"
@@ -1137,8 +1168,11 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       name: string
-      Price: number
+      price: number
       category: string
+      maincategory: string
+      type: string
+      weight: number
       subcategory: string | null
       rating: number | null
       description: string
@@ -1517,8 +1551,11 @@ export namespace Prisma {
   interface ProductFieldRefs {
     readonly id: FieldRef<"Product", 'Int'>
     readonly name: FieldRef<"Product", 'String'>
-    readonly Price: FieldRef<"Product", 'Int'>
+    readonly price: FieldRef<"Product", 'Int'>
     readonly category: FieldRef<"Product", 'String'>
+    readonly maincategory: FieldRef<"Product", 'String'>
+    readonly type: FieldRef<"Product", 'String'>
+    readonly weight: FieldRef<"Product", 'Int'>
     readonly subcategory: FieldRef<"Product", 'String'>
     readonly rating: FieldRef<"Product", 'Float'>
     readonly description: FieldRef<"Product", 'String'>
@@ -1864,8 +1901,11 @@ export namespace Prisma {
   export const ProductScalarFieldEnum: {
     id: 'id',
     name: 'name',
-    Price: 'Price',
+    price: 'price',
     category: 'category',
+    maincategory: 'maincategory',
+    type: 'type',
+    weight: 'weight',
     subcategory: 'subcategory',
     rating: 'rating',
     description: 'description',
@@ -1921,6 +1961,8 @@ export namespace Prisma {
   export const ProductOrderByRelevanceFieldEnum: {
     name: 'name',
     category: 'category',
+    maincategory: 'maincategory',
+    type: 'type',
     subcategory: 'subcategory',
     description: 'description',
     Ingredients: 'Ingredients'
@@ -1985,8 +2027,11 @@ export namespace Prisma {
     NOT?: ProductWhereInput | ProductWhereInput[]
     id?: IntFilter<"Product"> | number
     name?: StringFilter<"Product"> | string
-    Price?: IntFilter<"Product"> | number
+    price?: IntFilter<"Product"> | number
     category?: StringFilter<"Product"> | string
+    maincategory?: StringFilter<"Product"> | string
+    type?: StringFilter<"Product"> | string
+    weight?: IntFilter<"Product"> | number
     subcategory?: StringNullableFilter<"Product"> | string | null
     rating?: FloatNullableFilter<"Product"> | number | null
     description?: StringFilter<"Product"> | string
@@ -1999,8 +2044,11 @@ export namespace Prisma {
   export type ProductOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
-    Price?: SortOrder
+    price?: SortOrder
     category?: SortOrder
+    maincategory?: SortOrder
+    type?: SortOrder
+    weight?: SortOrder
     subcategory?: SortOrderInput | SortOrder
     rating?: SortOrderInput | SortOrder
     description?: SortOrder
@@ -2017,8 +2065,11 @@ export namespace Prisma {
     OR?: ProductWhereInput[]
     NOT?: ProductWhereInput | ProductWhereInput[]
     name?: StringFilter<"Product"> | string
-    Price?: IntFilter<"Product"> | number
+    price?: IntFilter<"Product"> | number
     category?: StringFilter<"Product"> | string
+    maincategory?: StringFilter<"Product"> | string
+    type?: StringFilter<"Product"> | string
+    weight?: IntFilter<"Product"> | number
     subcategory?: StringNullableFilter<"Product"> | string | null
     rating?: FloatNullableFilter<"Product"> | number | null
     description?: StringFilter<"Product"> | string
@@ -2031,8 +2082,11 @@ export namespace Prisma {
   export type ProductOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
-    Price?: SortOrder
+    price?: SortOrder
     category?: SortOrder
+    maincategory?: SortOrder
+    type?: SortOrder
+    weight?: SortOrder
     subcategory?: SortOrderInput | SortOrder
     rating?: SortOrderInput | SortOrder
     description?: SortOrder
@@ -2053,8 +2107,11 @@ export namespace Prisma {
     NOT?: ProductScalarWhereWithAggregatesInput | ProductScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Product"> | number
     name?: StringWithAggregatesFilter<"Product"> | string
-    Price?: IntWithAggregatesFilter<"Product"> | number
+    price?: IntWithAggregatesFilter<"Product"> | number
     category?: StringWithAggregatesFilter<"Product"> | string
+    maincategory?: StringWithAggregatesFilter<"Product"> | string
+    type?: StringWithAggregatesFilter<"Product"> | string
+    weight?: IntWithAggregatesFilter<"Product"> | number
     subcategory?: StringNullableWithAggregatesFilter<"Product"> | string | null
     rating?: FloatNullableWithAggregatesFilter<"Product"> | number | null
     description?: StringWithAggregatesFilter<"Product"> | string
@@ -2066,8 +2123,11 @@ export namespace Prisma {
 
   export type ProductCreateInput = {
     name: string
-    Price: number
+    price: number
     category: string
+    maincategory: string
+    type: string
+    weight: number
     subcategory?: string | null
     rating?: number | null
     description: string
@@ -2080,8 +2140,11 @@ export namespace Prisma {
   export type ProductUncheckedCreateInput = {
     id?: number
     name: string
-    Price: number
+    price: number
     category: string
+    maincategory: string
+    type: string
+    weight: number
     subcategory?: string | null
     rating?: number | null
     description: string
@@ -2093,8 +2156,11 @@ export namespace Prisma {
 
   export type ProductUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
-    Price?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
+    maincategory?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    weight?: IntFieldUpdateOperationsInput | number
     subcategory?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     description?: StringFieldUpdateOperationsInput | string
@@ -2107,8 +2173,11 @@ export namespace Prisma {
   export type ProductUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    Price?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
+    maincategory?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    weight?: IntFieldUpdateOperationsInput | number
     subcategory?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     description?: StringFieldUpdateOperationsInput | string
@@ -2121,8 +2190,11 @@ export namespace Prisma {
   export type ProductCreateManyInput = {
     id?: number
     name: string
-    Price: number
+    price: number
     category: string
+    maincategory: string
+    type: string
+    weight: number
     subcategory?: string | null
     rating?: number | null
     description: string
@@ -2134,8 +2206,11 @@ export namespace Prisma {
 
   export type ProductUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
-    Price?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
+    maincategory?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    weight?: IntFieldUpdateOperationsInput | number
     subcategory?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     description?: StringFieldUpdateOperationsInput | string
@@ -2148,8 +2223,11 @@ export namespace Prisma {
   export type ProductUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    Price?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
     category?: StringFieldUpdateOperationsInput | string
+    maincategory?: StringFieldUpdateOperationsInput | string
+    type?: StringFieldUpdateOperationsInput | string
+    weight?: IntFieldUpdateOperationsInput | number
     subcategory?: NullableStringFieldUpdateOperationsInput | string | null
     rating?: NullableFloatFieldUpdateOperationsInput | number | null
     description?: StringFieldUpdateOperationsInput | string
@@ -2259,8 +2337,11 @@ export namespace Prisma {
   export type ProductCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    Price?: SortOrder
+    price?: SortOrder
     category?: SortOrder
+    maincategory?: SortOrder
+    type?: SortOrder
+    weight?: SortOrder
     subcategory?: SortOrder
     rating?: SortOrder
     description?: SortOrder
@@ -2272,15 +2353,19 @@ export namespace Prisma {
 
   export type ProductAvgOrderByAggregateInput = {
     id?: SortOrder
-    Price?: SortOrder
+    price?: SortOrder
+    weight?: SortOrder
     rating?: SortOrder
   }
 
   export type ProductMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    Price?: SortOrder
+    price?: SortOrder
     category?: SortOrder
+    maincategory?: SortOrder
+    type?: SortOrder
+    weight?: SortOrder
     subcategory?: SortOrder
     rating?: SortOrder
     description?: SortOrder
@@ -2292,8 +2377,11 @@ export namespace Prisma {
   export type ProductMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    Price?: SortOrder
+    price?: SortOrder
     category?: SortOrder
+    maincategory?: SortOrder
+    type?: SortOrder
+    weight?: SortOrder
     subcategory?: SortOrder
     rating?: SortOrder
     description?: SortOrder
@@ -2304,7 +2392,8 @@ export namespace Prisma {
 
   export type ProductSumOrderByAggregateInput = {
     id?: SortOrder
-    Price?: SortOrder
+    price?: SortOrder
+    weight?: SortOrder
     rating?: SortOrder
   }
 
