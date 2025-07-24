@@ -7,7 +7,7 @@ import RootLayout from "./layouts/RootLayouts";
 import HomePage from "./routers/home";
 import AllProducts from "./pages/Products";
 import ProductsDetails from "./components/productsdetails";
-import { Cart } from "./pages/cart";
+import { Cart } from "./pages/cart"; //cart
 
 import AdminLayout from "./Admin/components/sidebar";
 import Dashboard from "./Admin/pages/Dasboard";
