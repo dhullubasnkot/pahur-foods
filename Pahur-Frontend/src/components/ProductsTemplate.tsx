@@ -19,7 +19,6 @@ export default function ProductList({
   const data = products ?? [];
 
   const displayedProducts = showAll ? data : data.slice(0, 8);
-
   return (
     <div className="min-h-screen px-4 py-10 bg-white font-sans">
       <div className="max-w-7xl mx-auto">

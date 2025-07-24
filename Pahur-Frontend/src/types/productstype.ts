@@ -1,7 +1,7 @@
 export interface Product {
   id: number; // unique product ID
   name: string; // product name
-  weight: number;
+  weight: string;
   price: number; // product price in Rs
   category: string; // main category, e.g., "Pickles", "Ghee"
   subcategory?: string; // optional subcategory, e.g., "Piro", "Regular"

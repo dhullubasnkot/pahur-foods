@@ -1,12 +1,6 @@
-import {
-  createContext,
-  useContext,
-  useState,
-  ReactNode,
-  useEffect,
-} from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import type { ReactNode } from "react";
 
-// Define product type to match your product structure
 export type ProductType = {
   id: number;
   name: string;
@@ -17,6 +11,8 @@ export type ProductType = {
   category: string;
   mainCategory: string;
   type: string;
+  subcategory: string;
+  rating: number;
   image: {
     main: string;
     images?: string[];
@@ -36,7 +32,6 @@ type CartProviderProps = {
 };
 
 export const CartProvider = ({ children }: CartProviderProps) => {
-  // Initialize cart from localStorage if exists
   const [cart, setCart] = useState<ProductType[]>(() => {
     if (typeof window !== "undefined") {
       const stored = localStorage.getItem("cart");
@@ -53,7 +48,6 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     });
   };
 
-  // Sync cart to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);

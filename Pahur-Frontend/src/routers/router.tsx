@@ -27,7 +27,6 @@ const AppRouter: React.FC = () => {
           <Route path="/products" element={<AllProducts />} />
           <Route path="/products/:id" element={<ProductsDetails />} />
           <Route path="/cart" element={<Cart />} />
-
           {/* Admin routes with layout */}
           <Route path="/admin" element={<AdminLayout />}>
             {/* Redirect /admin to /admin/dashboard */}
