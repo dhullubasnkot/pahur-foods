@@ -8,3 +8,4 @@ const pickles = ProductsData.filter(
 export default function PickelPage() {
   return <ProductList category="Pickles" products={pickles} />;
 }
+//
