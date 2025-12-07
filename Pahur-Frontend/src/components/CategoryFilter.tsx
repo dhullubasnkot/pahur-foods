@@ -38,4 +38,3 @@ export const CategoryFilter = ({
     </div>
   );
 };
-////
